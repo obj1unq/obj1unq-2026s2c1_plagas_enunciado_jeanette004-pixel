@@ -77,7 +77,7 @@ class Plaga{
   }
 }
 
-class Cucarachas inherits Plaga{
+class Cucaracha inherits Plaga{
   var property peso=0
 
   override method nivelDeDaño(){
@@ -93,7 +93,7 @@ class Cucarachas inherits Plaga{
 }
 
 
-class Mosquitos inherits Plaga{
+class Mosquito inherits Plaga{
   method nivelDeDaño(){
       return poblacion
   }
@@ -103,14 +103,14 @@ class Mosquitos inherits Plaga{
   }
 
 }
-class Pulgas inherits Plaga{
+class Pulga inherits Plaga{
   override method niveldeDaño(){
     return poblacion*2
   }
 
 }
 
-class Garrapatas inherits Pulgas{
+class Garrapata inherits Pulga{
 
 override method atacar(elemento_){
   super()+poblacion%10

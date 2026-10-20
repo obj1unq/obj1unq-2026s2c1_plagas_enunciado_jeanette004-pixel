@@ -82,7 +82,7 @@ class Plaga{
 
 class Cucaracha inherits Plaga{
   var property peso=0
-
+  
   override method poblacion(poblacion_){
     poblacion=poblacion_
   } 

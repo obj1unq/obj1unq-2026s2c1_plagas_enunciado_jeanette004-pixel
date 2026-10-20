@@ -94,7 +94,7 @@ class Cucaracha inherits Plaga{
     return super() && peso>=10
   }
   override method atacar(elemento_){
-    super() 
+    super(elemento_) 
     peso=peso+2
   }
 }
@@ -129,6 +129,6 @@ class Garrapata inherits Pulga{
   } 
 
 override method atacar(elemento_){
-  super()+poblacion%10
+  super(elemento_)+poblacion%10
 }
 }

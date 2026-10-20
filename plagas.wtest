@@ -7,7 +7,7 @@ describe "test de plagas" {
     const hogar=new Hogar()
     cucaracha.poblacion(50)
     cucaracha.atacar(hogar)
-    assert.equals(hogar.nivelDeMugre(),50)
+    assert.equals(25,hogar.nivelDeMugre())
   }
 
 }

@@ -8,7 +8,7 @@ class Hogar{
 }
 
 class Huerta{
-  var capacidadDeProduccion=0
+  var property capacidadDeProduccion=0
   var nivel=0
 
   method esBueno(){
@@ -41,9 +41,48 @@ class Barrio{
 }
 
 class Plaga{
-  var niveldeDaño=0
   var poblacion=0
-  method transmiteEnfermedad(){
 
+  method poblacion(){
+    return poblacion
   }
+  method transmiteEnfermedad(){
+    return poblacion>10
+  }
+
+  method niveldeDaño(){
+    return 0
+  }
+}
+
+class Cucarachas inherits Plaga{
+  var property peso=0
+
+  override method nivelDeDaño(){
+    return poblacion/2
+  }
+  override method transmiteEnfermedad(){
+    return super() && peso>=10
+  }
+}
+
+
+class Mosquitos inherits Plaga{
+  method nivelDeDaño(){
+      return poblacion
+  }
+
+  override method transmiteEnfermedad(){
+    return super()&& poblacion % 3 ==0
+  }
+
+}
+class Pulgas inherits Plaga{
+  override method niveldeDaño(){
+    return poblacion*2
+  }
+
+}
+
+class Garrapatas inherits Pulgas{
 }

@@ -1,0 +1,16 @@
+import plagas.*
+
+describe "test de plagas" {
+
+  test "cuando la cucaracha ataca, daña al hogar y aumenta de peso" {
+    const cucaracha=new Cucaracha()
+    const hogar=new Hogar()
+    cucaracha.poblacion(50)
+    cucaracha.atacar(hogar)
+    assert.equals(25,hogar.nivelDeMugre())
+    assert.equals(2,cucaracha.peso())
+  }
+
+  
+
+}

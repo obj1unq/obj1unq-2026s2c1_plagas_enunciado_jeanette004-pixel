@@ -2,7 +2,7 @@ class Hogar{
   var nivelDeMugre=0
   var comfort=0
 
-  method esBueno(){
+   method esBueno(){
     return nivelDeMugre<= comfort/2 
   }
 
@@ -70,6 +70,11 @@ class Plaga{
   method niveldeDaño(){
     return 0
   }
+
+  method atacar(elemento_){
+    elemento_.teAtacaron()
+    poblacion=poblacion+poblacion%10
+  }
 }
 
 class Cucarachas inherits Plaga{
@@ -80,6 +85,10 @@ class Cucarachas inherits Plaga{
   }
   override method transmiteEnfermedad(){
     return super() && peso>=10
+  }
+  override method atacar(elemento_){
+    super() 
+    peso=peso+2
   }
 }
 
@@ -102,4 +111,8 @@ class Pulgas inherits Plaga{
 }
 
 class Garrapatas inherits Pulgas{
+
+override method atacar(elemento_){
+  super()+poblacion%10
+}
 }

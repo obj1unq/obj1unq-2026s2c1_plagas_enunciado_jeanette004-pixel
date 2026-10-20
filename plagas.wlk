@@ -2,6 +2,9 @@ class Hogar{
   var nivelDeMugre=0
   var comfort=0
 
+  method nivelDeMugre(){
+    return nivelDeMugre
+  }
    method esBueno(){
     return nivelDeMugre<= comfort/2 
   }
@@ -58,7 +61,7 @@ class Barrio{
 }
 
 class Plaga{
-  var poblacion=0
+  var property poblacion=0
 
   method poblacion(){
     return poblacion
@@ -80,6 +83,10 @@ class Plaga{
 class Cucaracha inherits Plaga{
   var property peso=0
 
+  override method poblacion(poblacion_){
+    poblacion=poblacion_
+  } 
+
   override method nivelDeDaño(){
     return poblacion/2
   }
@@ -94,6 +101,9 @@ class Cucaracha inherits Plaga{
 
 
 class Mosquito inherits Plaga{
+  override method poblacion(poblacion_){
+    poblacion=poblacion_
+  } 
   method nivelDeDaño(){
       return poblacion
   }
@@ -104,6 +114,9 @@ class Mosquito inherits Plaga{
 
 }
 class Pulga inherits Plaga{
+  override method poblacion(poblacion_){
+    poblacion=poblacion_
+  } 
   override method niveldeDaño(){
     return poblacion*2
   }
@@ -111,6 +124,9 @@ class Pulga inherits Plaga{
 }
 
 class Garrapata inherits Pulga{
+  override method poblacion(poblacion_){
+    poblacion=poblacion_
+  } 
 
 override method atacar(elemento_){
   super()+poblacion%10

@@ -5,8 +5,9 @@ describe "test de plagas" {
   test "cuando la cucaracha ataca, daña al hogar" {
     const cucaracha=new Cucaracha()
     const hogar=new Hogar()
+    cucaracha.poblacion(50)
     cucaracha.atacar(hogar)
-    assert.equals(100, pepita.energy())
+    assert.equals(hogar.nivelDeMugre(),50)
   }
 
 }

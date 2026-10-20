@@ -72,7 +72,7 @@ class Plaga{
   }
 
   method atacar(elemento_){
-    elemento_.teAtacaron()
+    elemento_.teAtacaron(self)
     poblacion=poblacion+poblacion%10
   }
 }

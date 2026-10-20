@@ -5,6 +5,10 @@ class Hogar{
   method esBueno(){
     return nivelDeMugre<= comfort/2 
   }
+
+  method teAtacaron(plaga_){
+    nivelDeMugre=nivelDeMugre+plaga_.nivelDeDaño()
+  }
 }
 
 class Huerta{
@@ -14,6 +18,14 @@ class Huerta{
   method esBueno(){
     return capacidadDeProduccion>nivel
   }
+
+  method teAtacaron(plaga_){
+    if(plaga_.transmiteEnfermedad()){
+      capacidadDeProduccion=capacidadDeProduccion-10-plaga_.nivelDeDaño()%3
+    }else{
+      capacidadDeProduccion=capacidadDeProduccion-plaga_.nivelDeDaño()%3
+    }
+  }
 }
 
 class Mascota{
@@ -21,6 +33,11 @@ class Mascota{
 
   method esBueno(){
     return nivelDeSalud>250
+  }
+  method teAtacaron(plaga_){
+    if(plaga_.transmiteEnfermedad()){
+      nivelDeSalud=nivelDeSalud-plaga_.nivelDeDaño()
+    }  
   }
 }
 
